@@ -1,0 +1,36 @@
+public string[] highestPair(string[] arr)
+{
+           string a = "true";
+           string b = "";
+
+var arrInOrder = arr.OrderByDescending(x=> x.value).toList();
+
+if(arrInOrder.First().Rank == "A")
+{
+b = arrInOrder.First().Rank;
+bool highStraight = arr.Where(i=> i.Rank == "K" || j=> j.Rank == "Q" || k => k.Rank == "J" || l=> l.Rank == "10").count() ==  4;
+bool lowStraight = arr.Where(i=> i.Rank == "2" || j=> j.Rank == "3" || k => k.Rank == "4" || l=> l.Rank == "5").count() ==  4;
+
+if(highStraight == true || lowStraight == false)
+{
+return new string[] {a,b};
+}
+}
+else
+{
+b = arrInOrder.First().Rank;
+bool highStraight = arr.Where(i=> i.Rank == "K" || j=> j.Rank == "Q" || k => k.Rank == "J" || l=> l.Rank == "10").count() ==  4;
+bool lowStraight = arr.Where(i=> i.Rank == "2" || j=> j.Rank == "3" || k => k.Rank == "4" || l=> l.Rank == "5").count() ==  4;
+
+if(highStraight == true || lowStraight == false)
+{
+return new string[] {a,b};
+}
+else
+{
+a="false";
+return new string[] {a};
+}
+}
+
+
